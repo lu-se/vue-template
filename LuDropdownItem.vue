@@ -4,14 +4,14 @@
     :to="item.path"
     class="dropdown-item"
   >
-    {{ t(item.id) }}
+    {{ t(item.label) }}
   </router-link>
   <a
     v-else
     :href="item.url"
     class="dropdown-item"
   >
-    {{ t(item.id) }}
+    {{ t(item.label) }}
   </a>
 </template>
 
