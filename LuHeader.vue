@@ -1,5 +1,6 @@
 <template>
   <header class="header nav-undecorated">
+    <a href="#main-content" class="main-nav__shortcut">Hoppa till huvudinnehåll</a>
     <LuNavbar
       v-if="navbarmenu"
       :menu="navbarmenu"
@@ -42,7 +43,6 @@
                         v-if="isLoggedIn"
                         class="ms-2 p-1 d-block nav-undecorated"
                         href="#"
-                        aria-controls="header-logout"
                         aria-expanded="false"
                         :aria-label="t('luvt.header.logout')"
                         @click.prevent="emit('logout')"
@@ -64,7 +64,6 @@
                         v-else
                         class="ms-2 p-1 d-block nav-undecorated"
                         href="#"
-                        aria-controls="header-login"
                         aria-expanded="false"
                         :aria-label="t('luvt.header.login')"
                         @click.prevent="emit('login')"
@@ -78,19 +77,18 @@
                       v-if="hasSearch"
                       class="nav-item"
                     >
-                      <a
-                        class="ms-2 p-1 d-block nav-undecorated"
-                        href="#"
-                        data-toggle="collapse"
+                      <button
+                        type="button"
+                        class="ms-2 p-1 d-block nav-undecorated icon-button"
                         aria-controls="header-search-form"
-                        aria-expanded="false"
+                        :aria-expanded="!searchCollapsed"
                         :aria-label="t('luvt.header.show_hide_search')"
-                        @click.prevent="toggleSearch"
+                        @click="toggleSearch"
                       >
                         <fa-icon :icon="['fal', 'search']" />
                         <br>
-                        {{ t('luvt.header.search') }}
-                      </a>
+                        <span class="icon-button-label">{{ t('luvt.header.search') }}</span>
+                      </button>
                     </div>
                     <div class="nav-item">
                       <a
@@ -108,15 +106,16 @@
                     </div>
                   </nav>
                   <div class="d-none d-lg-flex flex-column flex-xl-row w-100 justify-content-end">
-                    <nav
+                    <div
                       v-if="hasSearch"
                       class="nav align-items-center justify-content-end flex-1 mb-3 mb-xl-0"
                     >
                       <div class="nav-item flex-xl-grow-1">
                         <form
                           class="form-inline pe-xl-3"
+                          role="search"
                           @submit.prevent="search"
-                        >
+                          >
                           <div class="input-group input-group-round input-group-sm w-100 flex">
                             <input
                               id="header-search-field"
@@ -125,6 +124,8 @@
                               type="search"
                               class="form-control form-control-sm border-end-0"
                               :placeholder="searchPlaceholder"
+                              :aria-label="t('luvt.header.search')"
+                              autocomplete="off"
                             >
                             <div class="input-group-append">
                               <button
@@ -138,7 +139,7 @@
                           </div>
                         </form>
                       </div>
-                    </nav>
+                    </div>
                     <nav class="nav align-items-center justify-content-end">
                       <div
                         v-if="hasLogin"
@@ -251,6 +252,7 @@
                 type="search"
                 class="form-control form-control-sm border-end-0"
                 :placeholder="searchPlaceholder"
+                :aria-label="t('luvt.header.search')"
               >
               <div class="input-group-append">
                 <button
@@ -379,6 +381,24 @@ const search = function () {
 </script>
 
 <style scoped>
+.icon-button {
+  appearance: none;
+  background: none;
+  border: none;
+  font: inherit;
+  text-align: inherit;
+  cursor: pointer;
+  color: var(--bs-link-color);
+}
+
+.icon-button:hover {
+  color: var(--bs-link-hover-color);
+}
+
+.icon-button:hover .icon-button-label {
+  text-decoration: underline;
+}
+
 .slide-enter-active {
    transition-duration: 0.2s;
    transition-timing-function: linear;

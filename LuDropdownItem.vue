@@ -1,18 +1,20 @@
 <template>
-  <router-link
-    v-if="item.path"
-    :to="item.path"
-    class="dropdown-item"
-  >
-    {{ t(item.label) }}
-  </router-link>
-  <a
-    v-else
-    :href="item.url"
-    class="dropdown-item"
-  >
-    {{ t(item.label) }}
-  </a>
+  <li>
+    <router-link
+      v-if="item.path"
+      :to="item.path"
+      class="dropdown-item"
+    >
+      {{ t(item.label) }}
+    </router-link>
+    <a
+      v-else
+      :href="item.url"
+      class="dropdown-item"
+    >
+      {{ t(item.label) }}
+    </a>
+  </li>
 </template>
 
 <script setup>
@@ -26,10 +28,10 @@ const { t } = useI18n()
 </script>
 
 <style scoped>
-.text-primary>.dropdown-item.active {
+.text-primary .dropdown-item.active {
   color: var(--bs-dropdown-link-active-color) !important;
 }
-.text-primary>.dropdown-item:hover {
+.text-primary .dropdown-item:hover {
   color: var(--bs-dropdown-link-hover-color) !important;
 }
 .dropdown-item:hover {

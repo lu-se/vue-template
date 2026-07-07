@@ -12,18 +12,20 @@
       >
         {{ t(item.label) }}
       </router-link>
-      <a
+      <button
         v-else
-        href="#"
+        type="button"
         class="nav-link"
-        @click.prevent="toggleExpanded"
-      >{{ t(item.label) }}</a>
-      <div
-        class="mobile-nav-toggle"
+        @click="toggleExpanded"
+      >{{ t(item.label) }}</button>
+      <button
+        type="button"
+        class="mobile-nav-toggle btn-link"
         :class="[expanded ? '' : 'collapsed']"
         :data-target="'#sm-' + item.id"
         :aria-expanded="expanded"
         :aria-controls="'sm-' + item.id"
+        :aria-label="t(item.label)"
         @click="toggleExpanded"
       >
         <span
@@ -44,7 +46,7 @@
             :icon="['fal', 'minus-circle']"
           />
         </span>
-      </div>
+      </button>
     </div>
     <Transition name="expand">
       <ul
@@ -145,6 +147,24 @@ watch(
 .expand-enter-from,
 .expand-leave-to {
   max-height: 0px;
+}
+
+.mobile-nav-toggle {
+  background: none;
+  border-top: 0;
+  border-bottom: 0;
+  border-right: 0;
+  border-left: 1px solid #72726d;
+  font: inherit;
+  color: #FFFF;
+  cursor: pointer;
+}
+
+button.nav-link {
+  background: none;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
 }
 
 </style>
