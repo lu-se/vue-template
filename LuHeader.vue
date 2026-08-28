@@ -125,7 +125,6 @@
                               class="form-control form-control-sm border-end-0"
                               :placeholder="searchPlaceholder"
                               :aria-label="t('luvt.header.search')"
-                              autocomplete="off"
                             >
                             <div class="input-group-append">
                               <button
