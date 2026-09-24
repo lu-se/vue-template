@@ -1,27 +1,6 @@
 <template>
   <li
-    v-if="!item.children"
-    class="nav-item"
-    :class="{ active }"
-  >
-    <router-link
-      v-if="item.path"
-      :to="item.path"
-      class="nav-link text-nowrap"
-    >
-      {{ t(item.label) }}
-    </router-link>
-    <a
-      v-else
-      :href="item.url"
-      class="nav-link text-nowrap"
-      :tabindex="item.url ? null : '0'"
-    >
-      {{ t(item.label) }}
-    </a>
-  </li>
-  <li
-    v-else
+    v-if="item.children"
     class="nav-item dropdown dropdown-hover"
     :class="{ active }"
     @mouseenter="expanded = true"
@@ -59,11 +38,9 @@
     >
       {{ t(item.label) }}
     </span>
-    <!-- Hur fixa ul med styling? -->
     <ul
       class="dropdown-menu font-size-base"
       :class="[lastItem ? 'dropdown-menu-end' : '']"
-      aria-labelledby="dropdown-studera"
     >
       <LuDropdownItem
         v-for="subMenuItem in item.children"
@@ -71,6 +48,28 @@
         :item="subMenuItem"
       />
     </ul>
+  </li>
+  <li
+    v-else
+    class="nav-item"
+    :class="{ active }"
+  >
+    <router-link
+      v-if="item.path"
+      :to="item.path"
+      class="nav-link text-nowrap"
+    >
+      {{ t(item.label) }}
+    </router-link>
+    <!-- tabindex onödigt. blir alltid null -->
+    <a
+      v-else
+      :href="item.url"
+      class="nav-link text-nowrap"
+      :tabindex="item.url ? null : '0'"
+    >
+      {{ t(item.label) }}
+    </a>
   </li>
 </template>
 
@@ -102,6 +101,6 @@ const submenuId = computed(() => `nav-submenu-${props.item.id}`)
 
 <style scoped>
 :deep(.dropdown-item) {
-  font-size: 1.0625rem !important;
+  font-size: 1.05rem !important;
 }
 </style>

@@ -1,5 +1,4 @@
 <template>
-  <!-- TODO borde ha nav? -->
   <nav class="row d-none d-xl-block font-size-xl-lg font-weight-light">
     <ul class="nav justify-content-end nav-header-main flex-nowrap">
       <LuTopMenuItem

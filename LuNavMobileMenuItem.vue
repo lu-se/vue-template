@@ -167,4 +167,8 @@ button.nav-link {
   cursor: pointer;
 }
 
+.nav-link:hover {
+  text-decoration: none;
+}
+
 </style>

@@ -43,7 +43,6 @@
                         v-if="isLoggedIn"
                         class="ms-2 p-1 d-block nav-undecorated"
                         href="#"
-                        aria-expanded="false"
                         :aria-label="t('luvt.header.logout')"
                         @click.prevent="emit('logout')"
                       >
@@ -64,7 +63,6 @@
                         v-else
                         class="ms-2 p-1 d-block nav-undecorated"
                         href="#"
-                        aria-expanded="false"
                         :aria-label="t('luvt.header.login')"
                         @click.prevent="emit('login')"
                       >

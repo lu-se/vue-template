@@ -7,12 +7,13 @@
       type="button"
       style="display: inline-block;"
       @click.stop="handleClick"
+      :aria-label="t('luvt.to_top')"
     >
       <fa-icon
         class="fa-2x align-middle me-2"
         :icon="['fas', 'chevron-circle-up']"
       />
-      <span>{{ t('luvt.to_top') }}</span>
+      <span class="to-top-label" aria-hidden="true">{{ t('luvt.to_top') }}</span>
     </button>
   </transition>
 </template>
@@ -88,5 +89,12 @@ onUnmounted(removeScrollListener)
   .fade-enter,
   .fade-leave-active {
     opacity: 0
+  }
+
+  /* 576px from bootstrap breakpoint xs */
+  @media (max-width: 576px) {
+    .to-top-label {
+      display: none;
+    }
   }
 </style>

@@ -28,10 +28,10 @@ const { t } = useI18n()
 </script>
 
 <style scoped>
-.text-primary .dropdown-item.active {
+.text-primary > li > .dropdown-item.active {
   color: var(--bs-dropdown-link-active-color) !important;
 }
-.text-primary .dropdown-item:hover {
+.text-primary > li > .dropdown-item:hover {
   color: var(--bs-dropdown-link-hover-color) !important;
 }
 .dropdown-item:hover {
