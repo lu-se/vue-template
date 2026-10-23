@@ -1,6 +1,6 @@
 {
     "files.autoSave": "afterDelay",
-    "javascript.format.enable": false,
+    "js/ts.format.enabled": false,
     "editor.formatOnPaste": false,
     "editor.formatOnType": false,
     "editor.formatOnSave": false,
@@ -13,37 +13,5 @@
         "source.fixAll.eslint": "explicit"
     },
     "editor.tabSize": 2,
-    "i18n-ally.localesPaths": [
-        "locales"
-    ],
-    "i18n-ally.sourceLanguage": "sv",
-    "i18n-ally.displayLanguage": "sv",
-    "i18n-ally.sortKeys": true,
-    "i18n-ally.keepFulfilled": true,
-    "i18n-ally.enabledParsers": [
-        "js",
-        "json"
-    ],
-    "i18n-ally.keystyle": "nested",
     "files.eol": "\n",
-        "workbench.colorCustomizations": {
-        "activityBar.activeBackground": "#14ad0c",
-        "activityBar.activeBorder": "#155e02",
-        "activityBar.background": "#0e8a08",
-        "activityBar.foreground": "#e7e7e7",
-        "activityBar.inactiveForeground": "#e7e7e799",
-        "activityBarBadge.background": "#155e02",
-        "activityBarBadge.foreground": "#e7e7e7",
-        "statusBar.background": "#0e8a08",
-        "statusBar.foreground": "#e7e7e7",
-        "statusBarItem.hoverBackground": "#0e8a08",
-        "titleBar.activeBackground": "#0e8a08",
-        "titleBar.activeForeground": "#e7e7e7",
-        "titleBar.inactiveBackground": "#0e8a08b3",
-        "titleBar.inactiveForeground": "#e7e7e799",
-        "sash.hoverBorder": "#0e8a08",
-        "statusBarItem.remoteBackground": "#0e8a08",
-        "statusBarItem.remoteForeground": "#e7e7e7",
-        "commandCenter.border": "#e7e7e799"
-    },
 }

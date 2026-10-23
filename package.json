@@ -1,6 +1,6 @@
 {
   "name": "@lu.se/vue-template",
-  "version": "4.0.3",
+  "version": "5.0.0",
   "description": "Components for LU template",
   "license": "MIT",
   "type": "module",
@@ -12,6 +12,10 @@
     {
       "name": "Rasmus Olofzon",
       "email": "rasmus.olofzon@lth.lu.se"
+    },
+    {
+      "name": "Per Elofsson",
+      "email": "per.elofsson@lth.lu.se"
     }
   ],
   "private": false,
