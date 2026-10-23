@@ -36,7 +36,6 @@ For an example using this module see [johandalabacka/vue-template-test](https://
   />
 
   <LuMain
-    :leftmenu="menu"
     compact
     last-updated="2021-11-30"
     :page-manager-mail="t('page_manager')"
@@ -45,18 +44,12 @@ For an example using this module see [johandalabacka/vue-template-test](https://
     <router-view />
   </LuMain>
   <LuToTop />
-  <LuFooter
-    :contact="{ name: t('lth_full'), box: '118', zip: '221 00', phone: '046-222 72 00', mail: 'info@lth.se' }"
-    :logo-src="`${baseUrl}lumall/images/logo/lth_logo_footer_${locale}.svg`"
-    :logo-title="t('lth_full')"
-    :short-cuts="menu"
-  />
 </template>
 
 <script setup>
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { LuHeader, LuBreadCrumb, LuMain, LuFooter, LuToTop } from '@lu.se/vue-template/index.js'
+import { LuHeader, LuBreadCrumb, LuMain, LuToTop } from '@lu.se/vue-template/index.js'
 
 import menuData from './menu.js'
 
@@ -259,7 +252,7 @@ Some components only have one string and are thus only named with the slug:
 
 ## Components
 
-**LuHeader**, **LuBreadCrumb**, **LuMain**, **LuFooter** is to be at top level in your app.
+**LuHeader**, **LuBreadCrumb**, **LuMain** is to be at top level in your app.
 The other components are used by them and you don't need to import them.
 
 ### [LuHeader](./LuHeader.vue)
@@ -305,7 +298,6 @@ It uses no props and takes all information from the router.
 
 Name | Description | Default value
 ----|-----------|-------------
-`leftmenu` | Menu to the left. If not set will the menu not show and content will use the whole width. | null
 `lastUpdated` | Date of last update | ''
 `pageManagerMail` | Mail address of page manager | ''
 `pageManagerNotice` | Notice under the page manager / date | ''
@@ -328,7 +320,6 @@ Name | Description
 `default` | central content
 `right-column` | content to the right. Goes below default content on smaller screens.
 
-### [LuFooter](./LuFooter.vue)
 
 #### props
 

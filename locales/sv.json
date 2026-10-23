@@ -1,11 +1,6 @@
 {
   "luvt": {
     "change_language": "English",
-    "footer": {
-      "change_language": "Change to English",
-      "contact_us": "Kontakta oss",
-      "shortcuts": "Genvägar"
-    },
     "header": {
       "listen": "Lyssna",
       "login": "Logga in",

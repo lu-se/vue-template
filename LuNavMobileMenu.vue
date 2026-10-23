@@ -1,5 +1,6 @@
 <template>
   <div
+    id="nav-mobile"
     ref="modalElement"
     class="modal fade"
     tabindex="-1"

@@ -1,11 +1,6 @@
 {
   "luvt": {
     "change_language": "Svenska",
-    "footer": {
-      "change_language": "Byt till svenska",
-      "contact_us": "Contact Us",
-      "shortcuts": "Shortcuts"
-    },
     "header": {
       "listen": "Listen",
       "login": "Log in",
